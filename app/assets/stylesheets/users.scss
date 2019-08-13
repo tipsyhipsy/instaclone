@@ -1,3 +1,26 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.row {
+	padding: 45px;
+}
+
+.hide_under_md {
+	margin-top: 150px;
+	max-width: 450px;
+}
+
+.new-user {
+	max-width: 350px;
+	border: solid #D6D6D6;
+	margin-top: 100px;
+}
+
+.new-user p {
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+.img_center {
+	display: block;
+	margin: 32px auto 15px;
+	width: 50%;
+}
+

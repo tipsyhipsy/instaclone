@@ -1,2 +1,27 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+
+<div class="row">
+	<figure class="apps_img col-md-6">
+		<%= image_tag "iphone_img.png", class:"hide_under_md" %>
+	</figure>
+
+
+
+	<%= form_with(model: @user, local: true) do |f| %>
+		<div class="new-user col-md-6">
+			<%= image_tag "horistagram_logo_lg.png", class:"img_center" %>
+			<p>友達の動画や写真をチェックしよう</p>
+			<ul>
+				<li><%= f.label :email %></li>
+				<li><%= f.email_field :email, class: 'form-control' %></li>
+				<li><%= f.label :name %></li>
+				<li><%= f.text_field :name, class: 'form-control' %></li>
+				<li><%= f.label :password %></li>
+				<li><%= f.password_field :password, class: 'form-control' %></li>
+				<li><%= f.label :password_confirmation %></li>
+				<li><%= f.password_field :pasword_confirmation, class: 'form-control' %></li>
+				<br>
+				<li><%= f.submit "Create New Account", class: 'btn btn-primary'%></li>
+			</ul>
+		</div>
+	<% end %>
+</div>
