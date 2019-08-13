@@ -6,18 +6,13 @@ class UsersController < ApplicationController
   # end
 
   def new
-    if params[:back]
-    @user = User.new(user_params)
-    else
-      User.new
-    end
+    @user = User.new
   end
 
   def create
-    if user.save
-      login @user
-      flash[:success] = "Hellow #{@user.name}"
-      redirect_to posts_path(@user.id)
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to posts_path
     else
       render 'new'
     end
@@ -39,17 +34,16 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to root_path
+    redirect_to new_user_path
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :user_icone, :user_icone_cache)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :user_icone)
   end
 
   def set_user
     @user = User.find(params[:id])
   end
-
 end
