@@ -27,7 +27,8 @@ class PostsController < ApplicationController
   end
 
   def confirm
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
+    render :new if @post.invalid?
   end
 
   def show
@@ -45,6 +46,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post.destroy
+    redirect_to posts_path
   end
 
   private

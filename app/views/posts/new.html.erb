@@ -1,12 +1,3 @@
+<h3>新規投稿</h3>
 
-<div class="post-new">
-	<%= form_with(model: @post, local: true) do |f|%>
-		<ul>
-			<li><%= f.label :content %></li>
-			<li><%= f.text_area :content, class:"form-control" %></li>
-			<li><%= f.label :image %></li>
-			<li><%= f.file_field :image %></li>
-			<li><%= f.submit "send", class:"btn btn-primary" %></li>
-		</ul>
-	<% end %>
-</div>
+<%= render 'form' %>
