@@ -1,7 +1,0 @@
-<h3>投稿確認</h3>
-
-<%= form_with(model: @post, url: posts_path, local: true) do |f| %>
-	<%= f.hidden_field :cnotent %>
-	<p><%= @post.content %></p>
-	<%= f.submit "commit" %>
-<% end %>

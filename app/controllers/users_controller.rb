@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only:[:show, :edit, :update, :destroy]
 
   def index
-    @user = current_user
+    @users = current_user
     # @posts = Post.where(user_id: @user.id)all
   end
 
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      # log_in @user
+      log_in @user
       redirect_to posts_path
     else
       render 'new'

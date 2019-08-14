@@ -1,8 +1,13 @@
 <h1>Posts#index</h1>
+<%= link_to "logout", session_path(current_user.id), method: :delete %>
 
 <% @posts.each do |post| %>
 	<%= post.content %>
 	<%= post.image.url %>
-<% end %>
 
+<%= link_to "show", post_path(post.id) %>
+<%= link_to "edit", edit_post_path(post.id) %>
+<%= link_to "delete", post_path(post.id), method: :delete, data:{confirm: "delete？"} %>
+<% end %>
 <%= link_to "newpost", new_post_path %>
+<%= link_to "Plofile", user_path(current_user.id) %>

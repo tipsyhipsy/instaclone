@@ -3,7 +3,7 @@
 <%= @post.content %>
 
 <p>
-<%= image_tag @post.image.url %>
+<%= image_tag @post.image.url if @post.image? %>
 </p>
 
 <%= link_to 'edit', edit_post_path(@post) %>

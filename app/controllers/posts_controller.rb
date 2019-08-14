@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     if params[:back]
       render 'new'
     else
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 
   def confirm
     @post = current_user.posts.build(post_params)
-    render :new if @post.invalid?
+    render 'new' if @post.invalid?
   end
 
   def show
@@ -53,7 +53,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :image, :image_cache, :reomve_image)
+    params.require(:post).permit(:content, :image, :image_cache, :remove_image)
   end
 
   def set_post

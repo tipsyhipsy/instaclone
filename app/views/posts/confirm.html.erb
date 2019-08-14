@@ -1,0 +1,11 @@
+<h3>投稿確認</h3>
+
+<%= form_with(model: @post, local: true) do |f| %>
+	<%= f.hidden_field :content %>
+	<p><%= @post.content %></p>
+	<p><%= image_tag(@post.image.url) if @post.image && @post.image.url %></p>
+	<%= f.hidden_field :image_cache %>
+	<p><%= @post.image %></p>
+	<%= f.submit "submit", class:"btn btn-primary" %>
+	<%= f.submit "Back", name: 'back', class:"btn btn-primary" %>
+<% end %>

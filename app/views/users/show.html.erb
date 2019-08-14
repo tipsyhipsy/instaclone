@@ -1,2 +1,11 @@
 <h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+
+<%= image_tag(@user.user_icone.url) if @user.user_icone.nil? %>
+<%= @user.name %>
+<%= @user.email %>
+<%= link_to "edit", edit_user_path(@user.id) %>
+
+
+<%= link_to "Posts", posts_path %>
+<%= link_to "logout", session_path(current_user.id), method: :delete %>
+
