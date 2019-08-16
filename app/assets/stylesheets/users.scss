@@ -1,21 +1,13 @@
 .row {
 	padding: 45px;
+	margin: 0;
+	min-width: 100%;
+	min-height: 100%;
 }
 
 .hide_under_md {
 	margin-top: 150px;
 	max-width: 450px;
-}
-
-.new-user {
-	max-width: 350px;
-	border: solid #D6D6D6;
-	margin-top: 100px;
-}
-
-.new-user p {
-	text-align: center;
-	font-size: 1.5rem;
 }
 
 .img_center {
@@ -24,3 +16,72 @@
 	width: 50%;
 }
 
+.user-new {
+	max-width: 350px;
+	min-height: 580px;
+	border: solid 1px #D6D6D6;
+	margin: 100px 10px auto;
+	background-color: #FFFF;
+}
+
+.user-new p {
+	font-size: 1.5rem;
+}
+
+.btn-square {
+	color: #FFFF;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #337AB7;
+	border-radius: 3px;
+}
+
+.user-login {
+	max-width: 350px;
+	border: solid 1px #D6D6D6;
+	margin: 10px;
+	background-color: #FFFF;
+}
+
+.user-login p {
+	font-size: 1.5rem;
+	line-height: 70px;
+	margin: 0 auto;
+}
+
+.user-bottom {
+	display: block;
+	max-width: 350;
+}
+
+.dl-banner {
+	width: 145px;
+	margin: 5px;
+}
+
+// login page
+
+.session {
+	max-width: 350px;
+	display: block;
+	margin: 100px auto;
+}
+
+.session-login {
+	min-height: 380px;
+	border: solid 1px #D6D6D6;
+	background-color: #FFFF;
+}
+
+.session-signin {
+	height: 70px;
+	border: solid 1px #D6D6D6;
+	margin: 10px 0;
+	background-color: #FFFF;
+}
+
+.session-signin p {
+	padding: 0;
+	line-height: 70px;
+}

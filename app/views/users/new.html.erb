@@ -1,28 +1,36 @@
 
 <div class="row">
 	<figure class="apps_img col-md-6">
-		<%= image_tag "iphone_img.png", class:"hide_under_md" %>
+		<%= image_tag "iphone_img.png", id:"hide_under_md" %>
 	</figure>
 
-
-
-	<%= form_with(model: @user, local: true) do |f| %>
-		<div class="new-user col-md-6">
+	<div class="col-md-6">
+		<div class="user-new">
 			<%= image_tag "horistagram_logo_lg.png", class:"img_center" %>
 			<p>友達の動画や写真をチェックしよう</p>
-			<ul>
-				<li><%= f.label :email %></li>
-				<li><%= f.email_field :email, class:"form-control" %></li>
-				<li><%= f.label :name %></li>
-				<li><%= f.text_field :name, class:"form-control" %></li>
-				<li><%= f.label :password %></li>
-				<li><%= f.password_field :password, class:"form-control" %></li>
-				<li><%= f.label :password_confirmation %></li>
-				<li><%= f.password_field :pasword_confirmation, class:"form-control" %></li>
-				<br>
-				<li><%= f.submit "Create New Account", class:"btn btn-primary" %></li>
-			</ul>
+			<p><a href="#" class="btn-square">Fakebookでログイン</a></p>
+			<p>または</p>
+			<%= form_with(model: @user, local: true) do |f| %>
+				<ul>
+					<li><%= f.label :email %></li>
+					<li><%= f.email_field :email, class:"form-control" %></li>
+					<li><%= f.label :name %></li>
+					<li><%= f.text_field :name, class:"form-control" %></li>
+					<li><%= f.label :password %></li>
+					<li><%= f.password_field :password, class:"form-control" %></li>
+					<li><%= f.label :password_confirmation %></li>
+					<li><%= f.password_field :pasword_confirmation, class:"form-control" %></li>
+				</ul>
+				<p><%= f.submit "Create New Account", class:"btn btn-primary" %></p>
+			<% end %>
+			<p>登録することで、Facebookの利用規約、データ利用に関するポリシー、Cookieポリシーに同意するものとします。</p>
 		</div>
-	<% end %>
-	<%= link_to "login", new_session_path %>
+		<div class="user-login">
+			<p>アカウントをお持ちですか？<%= link_to "login", new_session_path %></p>
+		</div>
+		<div class="user-bottom">
+			<%= image_tag "apple_banner_dl.png", class:"dl-banner" %>
+			<%= image_tag "android_banner_dl.png", class:"dl-banner" %>
+		</div>
+	</div>
 </div>
