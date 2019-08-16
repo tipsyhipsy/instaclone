@@ -17,12 +17,12 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     if params[:back]
       render 'new'
+    elsif
+      @post.save
+      ContactMailer.posted_email(@user).deliver_later
+      redirect_to posts_path
     else
-      if @post.save
-        redirect_to posts_path
-      else
-        render 'new'
-      end
+      render 'new'
     end
   end
 
@@ -32,6 +32,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @favorite = current_user.favorites.find_by(post_id: @post.id)
   end
 
   def edit
