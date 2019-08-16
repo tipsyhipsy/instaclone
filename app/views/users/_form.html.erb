@@ -1,0 +1,29 @@
+<%= form_with(model: @user, local: true) do |f| %>
+	<% if @user.errors.any? %>
+		<div id="error_explanation">
+			<span><%= @user.errors.count %>erros.</span>
+			<ul>
+				<% @user.errors.full_messages.each do |m| %>
+					<li id='error_message'><%= m %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<ul>
+		<li><%= f.label :user_icone %></li>
+		<li><%= image_tag(@user.user_icone.url) if @user.user_icone && @user.user_icone.url%></li>
+		<li><%= f.file_field :image %></li>
+		<li><%= f.hidden_field :user_icone_cache %></li>
+		<li><p><%= f.check_box :remove_image %>remove_image</p></li>
+		<li><%= f.label :name %></li>
+		<li><%= f.text_field :name %></li>
+		<li><%= f.label :email %></li>
+		<li><%= f.email_field :email %></li>
+		<li><%= f.label :password %></li>
+		<li><%= f.password_field :password %></li>
+		<li><%= f.label :password_confirmation %></li>
+		<li><%= f.password_field :password_confirmation %></li>
+		<li><%= f.submit 'send'%>
+	</ul>
+<% end %>
+<%= link_to 'Back', posts_path %>
