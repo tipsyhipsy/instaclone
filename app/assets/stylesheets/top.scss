@@ -10,6 +10,10 @@ p {
 	text-align: center;
 }
 
+main {
+  margin-bottom: 60px;
+}
+
 p, ol, ul, td {
 	list-style: none;
 	font-family: verdana, arial, helvetica, sans-serif;
@@ -26,11 +30,11 @@ pre {
 
 a {
 	color: #000;
-	
+
   &:visited {
 		color: #666;
   }
-	
+
   &:hover {
 		color: #fff;
     background-color: #000;
@@ -80,4 +84,10 @@ td {
 
 label {
   display: block;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
 }

@@ -1,22 +1,21 @@
 <div class="row">
 	<p><%= link_to "logout", session_path(current_user.id), method: :delete %></p>
 	<div class="col-md-8">
-		<main class="post-field">
+		<main class="posted-field">
 			<% @posts.each do |post| %>
-				<section class="post-user">
-					<%= "#{post.user.name}" %>
-				</section>
-				<section class="post-pict">
-					<%= post.image.url %>
-				</section>
-				<section class="post-content">
-					<%= post.content %>
-				</section>
-				<nav>
+				<nav class="posted-nav">
 					<%= link_to "show", post_path(post.id) %>
 					<%= link_to "edit", edit_post_path(post.id) %>
 					<%= link_to "delete", post_path(post.id), method: :delete, data:{confirm: "delete？"} %>
 				</nav>
+				<section class="posted-user">
+				<%= image_tag "#{post.user.user_icon}", class:"posted-user-icon" %>
+					<%= "#{post.user.name}" %>
+				</section>
+				<%= image_tag "#{post.image}", class:"posted-pict" %>
+				<section class="posted-content">
+					<%= "#{post.content}" %>
+				</section>
 			<% end %>
 			<%= link_to "newpost", new_post_path %>
 			<%= link_to "Plofile", user_path(current_user.id) %>
