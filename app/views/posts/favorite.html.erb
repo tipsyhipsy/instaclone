@@ -1,0 +1,17 @@
+<main class="posted-field">
+			<% @favorites.each do |favorite| %>
+				<nav class="posted-nav">
+					<%= link_to "show", post_path(favorite.post.id) %>
+					<%= link_to "edit", edit_post_path(favorite.post.id) %>
+					<%= link_to "delete", post_path(favorite.post.id), method: :delete, data:{confirm: "delete？"} %>
+				</nav>
+				<section class="posted-user">
+					<%= image_tag "#{favorite.post.user.user_icon}", class:"posted-user-icon" %>
+					<%= "#{favorite.post.user.name}" %>
+				</section>
+				<%= image_tag "#{favorite.post.image}", class:"posted-pict" %>
+				<section class="posted-content">
+					<%= "#{favorite.post.content}" %>
+				</section>
+			<% end %>
+		</main>

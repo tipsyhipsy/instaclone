@@ -10,10 +10,10 @@
 		</div>
 	<% end %>
 	<ul>
-		<li><%= f.label :user_icone %></li>
-		<li><%= image_tag(@user.user_icone.url) if @user.user_icone && @user.user_icone.url%></li>
+		<li><%= f.label :user_icon %></li>
+		<li><%= image_tag(@user.user_icon.url) if @user.user_icon && @user.user_icon.url%></li>
 		<li><%= f.file_field :image %></li>
-		<li><%= f.hidden_field :user_icone_cache %></li>
+		<li><%= f.hidden_field :user_icon_cache %></li>
 		<li><p><%= f.check_box :remove_image %>remove_image</p></li>
 		<li><%= f.label :name %></li>
 		<li><%= f.text_field :name %></li>

@@ -4,13 +4,49 @@
     <title>Instaclone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://kit.fontawesome.com/7f18445a8d.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="conteiner">
+    <div class="container-fluid">
+      <header class="navbar navbar-fixed-top">
+        <section class="nav navba-nav navbar-left">
+          <%= image_tag 'logo_sm.png', class:"image-xs" %>
+          <%= image_tag 'horistagram_logo_lg.png', class:"image-long"%>
+        </section>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <%= link_to new_post_path(current_user.id) do %>
+                <i class="fas fa-plus-square fa-2x"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to user_path(current_user.id) do %>
+                <i class="fas fa-user fa-2x"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to favorite_post_path(current_user.id), method: :get do %>
+                <i class="fas fa-heart fa-2x"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to session_path(current_user.id), method: :delete do %>
+                <i class="fas fa-sign-out-alt fa-2x"></i>
+              <% end %>
+            </li>
+          </ul>
+        </nav>
+        <form id="search_form" action="http://localhost:3000/posts" method="get">
+          <input id="search_box" type="text" placeholder="検索" />
+          <button id="search_btn" type="submit" ><i class="fas fa-search"></i></button>
+        </form>
+      </header>
+    </div>
+    <div class="container">
       <%= yield %>
     </div>
   </body>

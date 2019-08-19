@@ -6,6 +6,29 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
 }
 
+header {
+  background-color: #FFFF;
+  height: 80px;
+	border: solid 1px #D6D6D6;
+}
+
+.navbar-left {
+  line-height: 80px;
+}
+
+.navbar-left img {
+  margin: 20px;
+}
+
+.navbar-rigth {
+  text-align: center;
+  margin: 0 auto;
+}
+
+#search_form {
+margin-top: 22px;
+}
+
 p {
 	text-align: center;
 }
@@ -90,4 +113,14 @@ label {
   content: "";
   display: block;
   clear: both;
+}
+
+.image-xs {
+  width: 24px;
+  height: 24px;
+}
+
+.image-long {
+  width: 100px;
+  height: 30px;
 }

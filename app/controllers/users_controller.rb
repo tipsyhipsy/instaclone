@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only:[:show, :edit, :update, :destroy]
-  before_action :authenticate_user, {only: [:edit, :update]}
-  before_action :ensure_correct_user,{only: [:edit, :update]}
+  # before_action :authenticate_user, {only: [:edit, :update]}
+  # before_action :ensure_correct_user,{only: [:edit, :update]}
+  layout 'logout_user', only:[:new, :create]
 
   def index
     @users = current_user
@@ -23,6 +24,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @posts = Post.where(user_id: @user.id).all
   end
 
   def edit
@@ -44,18 +46,18 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :user_icone, :user_icone_cache)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :user_icon, :user_icon_cache)
   end
 
   def set_user
     @user = User.find(params[:id])
   end
 
-  def authenticate_user
-    if @current_user == nil
-      redirect_to　new_session_path
-    end
-  end
+  # def authenticate_user
+  #   if @current_user == nil
+  #     redirect_to　new_session_path
+  #   end
+  # end
 
   def ensure_correct_user
     if @current_user.id !=  params[:id].to_i

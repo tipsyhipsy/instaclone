@@ -5,9 +5,20 @@
 	min-height: 100%;
 }
 
-.hide_under_md {
-	margin-top: 150px;
-	max-width: 450px;
+@media screen and (min-width:480px) and ( max-width:1024px) {
+	.apps_img {
+		display: none;
+		margin-top: 150px;
+		max-width: 450px;
+	}
+}
+
+@media screen and (min-width:1024px) {
+	.apps_img {
+		display: block;
+		margin-top: 150px;
+		max-width: 450px;
+	}
 }
 
 .img_center {
@@ -17,6 +28,7 @@
 }
 
 .user-new {
+	display: block;
 	max-width: 350px;
 	min-height: 580px;
 	border: solid 1px #D6D6D6;

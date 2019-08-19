@@ -6,6 +6,10 @@ class PostsController < ApplicationController
     @users = User.all
   end
 
+  def favorite
+    @favorites = Favorite.where(user_id: current_user.id)
+  end
+
   def new
     if params[:back]
       @post = Post.new(post_params)

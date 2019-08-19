@@ -1,5 +1,4 @@
 <div class="row">
-	<p><%= link_to "logout", session_path(current_user.id), method: :delete %></p>
 	<div class="col-md-8">
 		<main class="posted-field">
 			<% @posts.each do |post| %>
@@ -9,7 +8,7 @@
 					<%= link_to "delete", post_path(post.id), method: :delete, data:{confirm: "delete？"} %>
 				</nav>
 				<section class="posted-user">
-				<%= image_tag "#{post.user.user_icon}", class:"posted-user-icon" %>
+					<%= image_tag "#{post.user.user_icon}", class:"posted-user-icon" %>
 					<%= "#{post.user.name}" %>
 				</section>
 				<%= image_tag "#{post.image}", class:"posted-pict" %>
@@ -17,14 +16,15 @@
 					<%= "#{post.content}" %>
 				</section>
 			<% end %>
-			<%= link_to "newpost", new_post_path %>
-			<%= link_to "Plofile", user_path(current_user.id) %>
 		</main>
 	</div>
-	<aside class="col-md-4" id="hide_under_md">
+	<aside class="col-md-4 users-all" id="hide_under_md">
 		<% @users.each do |user| %>
 			<ul>
-				<li><%= "#{user.name}" %></li>
+				<li>
+					<%= image_tag "#{user.user_icon}", class:"posted-user-icon" %>
+					<%= "#{user.name}" %>
+				</li>
 			</ul>
 		<% end %>
 	</aside>

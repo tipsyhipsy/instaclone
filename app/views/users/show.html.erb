@@ -1,8 +1,9 @@
 <h1>Users#show</h1>
 
-<%= image_tag(@user.user_icone.url) if @user.user_icone.nil? %>
+<%= image_tag(@user.user_icon.url) if @user.user_icon.nil? %>
 <%= @user.name %>
 <%= @user.email %>
+<%# <%= image_tag(@posts.image) %> %>
 <%= link_to "edit", edit_user_path(@user.id) %>
 
 

@@ -1,25 +1,22 @@
+// index
 .posted-field {
+	margin-top: 60px;
 	width: 615px;
 	height: 660px;
 }
 
-.posted-nav {
-	float: right;
-	background-color: #FFFF;
-
-}
-.posted-user {
-	font-size: 2rem;
-	font-weight: bold;
-	height: 60px;
-	line-height: 60px;
-	background-color: #FFFF;
-
-}
+	.posted-nav {
+		float: right;
+		background-color: #FFFF;
+	}
 
 .posted-user-icon {
 	width: 44px;
 	height: 44px;
+}
+
+.posted-user {
+	background-color: #FFFF;
 }
 
 .posted-pict {
@@ -32,4 +29,35 @@
 	font-size: 1.5rem;
 	padding: 20px;
 	margin-bottom: 60px;
+}
+
+@media screen and (min-width:480px) {
+	aside {
+		display: none;
+	}
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px) {
+	aside {
+		display: none;
+	}
+}
+@media screen and (min-width:1024px) {
+	aside {
+		display: block;
+		background-color: #FFFF;
+		margin-top: 60px;
+		position: fixed;
+		right: 0;
+	}
+}
+
+// show
+.posted-show {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	top: 60px;
+	width: 615px;
+	height: 660px;
 }
