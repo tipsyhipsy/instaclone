@@ -1,12 +1,21 @@
-<h1>Users#show</h1>
-
-<%= image_tag(@user.user_icon.url) if @user.user_icon.nil? %>
-<%= @user.name %>
-<%= @user.email %>
-<%# <%= image_tag(@posts.image) %> %>
-<%= link_to "edit", edit_user_path(@user.id) %>
-
-
-<%= link_to "Posts", posts_path %>
-<%= link_to "logout", session_path(current_user.id), method: :delete %>
-
+<div class="row">
+	<div class="col-md-12">
+		<section class="profile-body">
+			<%= image_tag(@user.user_icon.url) %>
+			<ul class="profile-element">
+				<li><%= @user.name %></li>
+				<li><%= @user.email %></li>
+				<li>
+					<%= link_to edit_user_path(@user.id) do %>
+						<i class="fas fa-pen-square"></i>
+					<% end %>
+				</li>
+			</ul>
+		</section>
+		<figure class="profile-images">
+			<% @posts.each do |post| %>
+					<%= image_tag (post.image.url) %>
+			<% end%>
+		</figure>
+	</div>
+</div>

@@ -1,3 +1,4 @@
+<div class="row">
 <%= form_with(model: @user, local: true) do |f| %>
 	<% if @user.errors.any? %>
 		<div id="error_explanation">
@@ -10,11 +11,10 @@
 		</div>
 	<% end %>
 	<ul>
-		<li><%= f.label :user_icon %></li>
 		<li><%= image_tag(@user.user_icon.url) if @user.user_icon && @user.user_icon.url%></li>
-		<li><%= f.file_field :image %></li>
+		<li><%= f.file_field :user_icon %></li>
 		<li><%= f.hidden_field :user_icon_cache %></li>
-		<li><p><%= f.check_box :remove_image %>remove_image</p></li>
+		<li><%= f.check_box :remove_user_icon %>remove_image</li>
 		<li><%= f.label :name %></li>
 		<li><%= f.text_field :name %></li>
 		<li><%= f.label :email %></li>
@@ -27,3 +27,4 @@
 	</ul>
 <% end %>
 <%= link_to 'Back', posts_path %>
+</div>

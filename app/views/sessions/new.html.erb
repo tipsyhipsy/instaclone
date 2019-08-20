@@ -1,5 +1,8 @@
 <div class="row">
 	<div class="session">
+		<% flash.each do |name, msg| -%>
+			<%= content_tag :div, msg, class: name %>
+		<% end -%>
 		<div class="session-login">
 			<%= image_tag "horistagram_logo_lg.png", class:"img_center" %>
 			<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>

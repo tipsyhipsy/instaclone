@@ -97,3 +97,28 @@
 	padding: 0;
 	line-height: 70px;
 }
+
+// user page
+
+.profile-body {
+	height: 150px;
+	width: 935px;
+	margin: 60px auto;
+}
+
+.profile-element {
+	width: 615px;
+	height: 150px;
+	float: right;
+	font-size: 2.0rem;
+}
+
+.profile-images {
+	margin: 0 auto;
+}
+.profile-images img{
+	width: 300px;
+	height: 300px;
+	margin: 5px;
+	float: left;
+}
