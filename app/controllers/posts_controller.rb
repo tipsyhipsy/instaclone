@@ -23,8 +23,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     if params[:back]
       render 'new'
-    elsif
-      @post.save
+    elsif @post.save
       ContactMailer.contact_mail.deliver
       redirect_to posts_path
     else
