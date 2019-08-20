@@ -1,8 +1,5 @@
 class ContactMailer < ApplicationMailer
-  default form: 'ralralph@gmail.com'
-
-  def posted_email(user)
-    @user = user
-    mail(to: @user.email, subject: '画像を投稿しました。')
+  def contact_mail
+    mail to: "ralralph@gmail.com", subject: "投稿完了メール"
   end
 end

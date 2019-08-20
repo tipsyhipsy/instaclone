@@ -25,7 +25,7 @@ class PostsController < ApplicationController
       render 'new'
     elsif
       @post.save
-      ContactMailer.posted_email(@user).deliver_later
+      ContactMailer.contact_mail.deliver
       redirect_to posts_path
     else
       render 'new'
