@@ -6,9 +6,9 @@
 		<main class="posted-field">
 			<% @posts.each do |post| %>
 				<nav class="posted-nav">
-					<%= link_to "show", post_path(post.id) %>
-					<%= link_to "edit", edit_post_path(post.id) %>
-					<%= link_to "delete", post_path(post.id), method: :delete, data:{confirm: "delete？"} %>
+					<%= link_to "詳細", post_path(post.id) %>
+					<%= link_to "編集", edit_post_path(post.id) %>
+					<%= link_to "削除", post_path(post.id), method: :delete, data:{confirm: "delete？"} %>
 				</nav>
 				<section class="posted-user">
 					<%= image_tag "#{post.user.user_icon}", class:"posted-user-icon" %>

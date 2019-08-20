@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  # before_action :authenticate_user, except:[:new, :create]
   before_action :set_user, only:[:show, :edit, :update, :destroy]
   before_action :ensure_correct_user, only: [:edit, :update]
   layout 'logout_user', only:[:new, :create]
@@ -55,15 +54,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  # def authenticate_user
-  #   if @current_user == nil
-  #     redirect_to new_session_path
-  #   end
-  # end
 
   def ensure_correct_user
-    @post = Post.find_by(id: params[:id])
-    if current_user.id !=  @post.user_id
+    if current_user.id !=  @user.id
       flash[:notice] ="権限がありません。"
       redirect_to posts_path
     end

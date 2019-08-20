@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  # before_action :authenticate_user
   before_action :set_post, only:[:show, :edit, :update, :destroy]
   before_action :ensure_correct_user, only:[:edit, :update, :destroy]
 
@@ -67,12 +66,6 @@ class PostsController < ApplicationController
   def set_post
     @post = Post.find(params[:id])
   end
-
-  # def authenticate_user
-  #   if @current_user == nil
-  #     redirect_to new_user_path
-  #   end
-  # end
 
   def ensure_correct_user
     @post = Post.find_by(id: params[:id])

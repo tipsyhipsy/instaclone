@@ -1,0 +1,26 @@
+ja:
+  activerecord:
+    models:
+      post: 投稿
+      user: ユーザー
+      favorite: お気に入り
+    attributes:
+      post:
+        content: 内容
+        image: 写真
+        edit: 編集
+        delete: 削除
+        show: 詳細
+        create: 作成
+      user:
+        name: 名前
+        user_icon: ユーザーアイコン
+        email: メールアドレス
+        current_password: 現在のパスワード
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: ログインを記憶
+      session:
+        email: メールアドレス
+        password: パスワード
+        login: ログイン

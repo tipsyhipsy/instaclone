@@ -17,9 +17,9 @@
 			<li><%= image_tag(@post.image.url) %></li>
 			<li><%= f.file_field :image %></li>
 			<li><%= f.hidden_field :image_cache %></li>
-			<li><p><%= f.check_box :remove_image %>remove_image</p></li>
-			<li><%= f.submit 'send'%>
+			<li><%= f.check_box :remove_image %>remove_image</li>
+			<li><%= f.submit '投稿'%>
 		</ul>
 	<% end %>
-	<%= link_to 'Back', posts_path %>
+	<%= link_to '戻る', posts_path %>
 </div>
